@@ -45,8 +45,9 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">ECCV 2026 | Flowing from Reasoning to Motion: Learning 3D Hand
+                        <h1 class="title is-1 publication-title">Flowing from Reasoning to Motion: Learning 3D Hand
                             Trajectory Prediction from Egocentric Human Interaction Videos</h1>
+                        <h2 class="publication-venue">ECCV 2026</h2>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
                                 <a href="https://www.mingfeichen.com/">Mingfei Chen</a><sup>1,2</sup>,</span>
@@ -132,8 +133,9 @@
                     style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
                     <p class="has-text-centered" style="margin-top: 0.5rem;">
                         <em>
-                            We introduce the <b>EgoMAN dataset</b> (top), a large-scale egocentric dataset for stage-aware 3D hand trajectory prediction, containing 219K 6-DoF trajectories and 3M structured QA pairs for semantic, spatial, and motion reasoning. At inference, the <b>EgoMAN model</b> (bottom) takes an image, past hand motion, and an intent query, performs stage-aware reasoning to predict intent-specific waypoints, and generates distinct 6-DoF hand trajectories for different intents in the same scene.
-                            </em>
+                            EgoMAN predicts egocentric 3D hand trajectories through <b>interaction-structured reasoning</b>.
+Given visual observations, past hand motion, and an intent query, the model infers key interaction stages (start, contact, end) and generates intent-consistent 6DoF trajectories.
+To enable this formulation, we introduce the EgoMAN dataset, a large-scale egocentric benchmark with stage-aware trajectory annotations and 3M structured QA pairs for semantic, spatial, and motion reasoning.
                             
                     </p>
             </div>
@@ -176,17 +178,8 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Prior works on 3D hand trajectory prediction are constrained by datasets that decouple
-                            motion from semantic supervision and by models that weakly link reasoning and action. To
-                            address these, we first present the <strong>EgoMAN dataset</strong>, a large-scale
-                            egocentric dataset for interaction stage–aware 3D hand trajectory prediction with 219K 6DoF
-                            trajectories and 3M structured QA pairs for semantic, spatial, and motion reasoning.
-                        </p>
-                        <p>
-                            We then introduce the <strong>EgoMAN model</strong>, a reasoning-to-motion framework that
-                            links vision–language reasoning and motion generation via a trajectory-token interface.
-                            Trained progressively to align reasoning with motion dynamics, our approach yields accurate
-                            and stage-aware trajectories with generalization across real-world scenes.
+                            Our work addresses 3D hand trajectory prediction in egocentric interaction, where future hand motion is inferred from visual observations, past motion, spatial context, and intent. Real-world actions follow stage-aware interaction structures (e.g., approach, manipulate) describing how the hand interacts with objects over time. However, prior works typically treat trajectory prediction as continuous signal regression, decoupling motion from semantic supervision and ignoring interaction structure. Without stage-aware cues to infer intent, models struggle to separate purposeful motion from egocentric noise and generalize across diverse interactions.
+We therefore present EgoMAN, a unified framework for interaction-structured 3D hand trajectory prediction that models hand motion as stage-aware interactions between the hand and surrounding objects. EgoMAN introduces a novel Trajectory-Token Interface where a small set of tokens encodes interaction stages, temporal progression, and 6DoF pose, enabling interaction stage-aware reasoning to guide efficient long-horizon 3D trajectory generation while preserving physical interpretability. To support this formulation, we construct the EgoMAN dataset with 219K 6DoF trajectories, stage-aware annotations, and 3M semantic, spatial, and motion QA pairs. Experiments show that EgoMAN improves trajectory accuracy, smoothness, and generalization, enabling interaction-structured reasoning for egocentric hand motion prediction for applications in robotics and assistive systems.
                         </p>
                     </div>
                 </div>

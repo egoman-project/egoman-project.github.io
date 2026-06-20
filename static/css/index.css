@@ -10,6 +10,15 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+.publication-venue {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #363636;
+}
+
 .author-block {
   display: inline-block;
   margin: 0 0.2rem;
